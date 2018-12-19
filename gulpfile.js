@@ -1,3 +1,4 @@
+//加载gulp插件
 var gulp = require("gulp");
 var minifyCss = require('gulp-minify-css');
 var uglify = require('gulp-uglify');
@@ -31,12 +32,11 @@ gulp.task("css", function(){
 })
 
 gulp.task("js", function(){
-	gulp.src(["app/**/*.js","!app/libs/*.js"])
+	gulp.src(["app/js/*.js"])
 	.pipe(babel({
-		presets: ['@babel/env']
+		presets: ['env']
 	}))
-	.pipe(uglify())
-	.pipe(gulp.dest("dist"))
+	.pipe(gulp.dest("dist/js"))
 	.pipe(connect.reload());
 });
 
@@ -51,7 +51,7 @@ gulp.task("server", function(){
 
 gulp.task("watch", function(){
 	//第一个参数指要watch的文件，第二个参数文件内容改变之后分配的任务
-	gulp.watch("app/**/*.js",["js"]);
+	gulp.watch("app/js/*.js",["js"]);
 	gulp.watch("app/css/**/*.css",["css"]);
 	gulp.watch("app/**/*.html",["html"]);
 	gulp.watch("app/scss/**/*.scss",["sass"]);
@@ -61,8 +61,8 @@ gulp.task("watch", function(){
 
 //处理图片，位置迁移
 gulp.task("img", function(){
-	gulp.src("app/images/**/*")
-	.pipe(gulp.dest("dist/images"));
+	gulp.src("app/img/**/*")
+	.pipe(gulp.dest("dist/img"));
 });
 
 //复制移动第三方js
@@ -78,5 +78,8 @@ gulp.task("sass", function(){
 	.pipe(gulp.dest("dist/css"))
 	.pipe(connect.reload());
 })
-
+//编辑默认任务
 gulp.task("default",["server","html","js","css","watch","img","sass","libs","module"]);
+
+
+
