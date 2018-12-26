@@ -6,6 +6,7 @@ var connect = require('gulp-connect');
 var concat = require("gulp-concat");
 var babel = require('gulp-babel');
 var sass = require('gulp-sass');
+var browserSync = require('browser-sync');
 
 gulp.task("html", function(){
 	//stream 流  读取
@@ -41,10 +42,14 @@ gulp.task("js", function(){
 });
 
 gulp.task("server", function(){
+	//指定服务器启动根目录
+	// browserSync.init({
+	// 	server:"app"
+	// })
 	//开启一个服务
 	connect.server({
         livereload: true,
-        port: 2333,
+        port: 3000,
         root:"dist"
     });
 })
@@ -56,6 +61,8 @@ gulp.task("watch", function(){
 	gulp.watch("app/**/*.html",["html"]);
 	gulp.watch("app/scss/**/*.scss",["sass"]);
 	gulp.watch("app/module/**/*.js",["module"]);
+	//监听任何文件变化，实时刷新页面
+	gulp.watch("app/**/*.*").on('change',browserSync.reload);
 	
 });
 
@@ -72,7 +79,7 @@ gulp.task("libs", function(){
 })
 
 gulp.task("sass", function(){
-	//吧scss文件编译成css，并且放到dist里面
+	//把scss文件编译成css，并且放到dist里面
 	gulp.src("app/scss/*.scss")
 	.pipe(sass())
 	.pipe(gulp.dest("dist/css"))

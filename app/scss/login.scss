@@ -1,0 +1,177 @@
+#homepage{
+    width: 100%;
+    height: 10rem;
+    background-color: #ffffff;
+    font-size: 14px;
+    line-height: 10rem;
+    padding-left: 5%;
+}
+#wrap {
+    width: 100rem;
+    height: 70.5rem;
+   
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    #wrap-left {
+        width: 72.4rem;
+        height: 70.5rem;
+       
+        h3 {
+            font-size: 2.4rem;
+            color: #000000;
+            margin-bottom: 3rem;
+        }
+       #wrap-left-top {
+           display: flex;
+           justify-content: space-between;
+           #wrap-left-top-left{
+            dl {
+                width: 34.2rem;
+                margin-bottom: 4rem;
+                input {
+                    width: 100%;
+                    height: 3.5rem;
+                    border: 1px solid #bfbfbf;
+                    margin-top: 1rem;
+                    padding-left: 1rem;
+                }
+            }
+            input {
+                width: 1.7rem;
+                height: 1.7rem;
+                margin-right: 1rem
+            }
+            .userSpan {
+                font-size: 1.2rem;
+                color: #666666;
+            }
+            #loginBtn {
+                width: 12.2rem;
+                height: 3.6rem;
+                background-color: #000000;
+                color: #ffffff;
+                line-height: 3.6rem;
+                font-size: 1.4rem;
+               text-align: center;
+               margin: 2rem 0;
+            }
+            a {
+                color: #666666;
+                border-bottom: 1px solid #666666;
+            }
+           }
+           #wrap-left-top-center {
+               height: 15rem;
+               text-align: center;
+               span {
+                display: inline-block;
+                height: 6rem;
+                border: 1px solid #cfd0d0;
+               }
+               p {
+                   font-size: 1.2rem;
+                   color: #666666;
+                   margin: 0.8rem 0;
+                }
+           }
+           #wrap-left-top-right {
+               width: 22.4rem;
+               height: 10.5rem;
+              
+               p {
+                   font-size: 1.2rem;
+                   color: #000000;
+                   margin-bottom: 2.5rem;
+               }
+               ul {
+                   display: flex;
+                   justify-content: space-between;
+                   text-align: center;
+                   a {
+                       display: inline-block;
+                       width: 3.8rem;
+                       height: 3.8rem;
+                       border: 1px solid #e5e6e5;
+                   }
+                   span {
+                       display: inline-block;
+                       color: #000000;
+                       margin-top: 0.3rem;
+                       
+                   }
+               }
+           }
+       }
+       #wrap-left-bottom {
+           h4 {
+               font-size: 2.6rem;
+               color: #000000;
+               margin-top: 9rem;
+               margin-bottom: 3rem;
+           }
+           p {
+               font-size: 1.2rem;
+               color: #666666;
+               line-height: 2rem;
+               margin-bottom: 3rem;
+           }
+           #sub {
+                width: 12.2rem;
+                height: 3.6rem;
+                background-color: #000000;
+                color: #ffffff;
+                line-height: 3.6rem;
+                font-size: 1.4rem;
+                text-align: center;
+                margin: 2rem 0;
+           }
+       }
+    }
+    #wrap-right {
+        width: 22.5rem;
+        height: 46.8rem;
+        
+        display: flex;
+        flex-direction: column;
+        font-size: 1.2rem;
+        color: #000000;
+        text-align: center;
+        line-height: 2rem;
+        .border-bottom {
+            border-bottom: 1px solid #c5c5c5;
+            height: 5rem;
+            line-height: 5rem;
+            margin-bottom: 2rem;
+        }
+        #wrap-right-top {
+            width: 100%;
+            height: 21rem;
+            background-color: #eeeeee;
+            margin-bottom: 1rem;
+            padding: 2.3rem;
+            #consult {
+                width: 12.2rem;
+                height: 3.6rem;
+                background-color: #000000;
+                color: #ffffff;
+                line-height: 3.6rem;
+                font-size: 1.4rem;
+                margin: 1.5rem auto;
+            }
+        }
+        #wrap-right-bottom {
+            width: 100%;
+            height: 23rem;
+            background-color: #eeeeee;
+            padding: 2.3rem;
+            li {margin-bottom: 0.5rem;text-align: left;}
+            
+            a{
+                display: inline-block;
+                border-bottom: 1px solid #000000;
+                
+            }
+        }
+    }
+}
