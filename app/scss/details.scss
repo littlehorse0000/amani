@@ -1,0 +1,227 @@
+#deatils-nav {
+    height: 5.2rem;
+    width: 100%;
+    border-bottom: 0.2rem solid #cdcdcd;
+    line-height: 5.2rem;
+    color: #939494;
+    ul{
+        display: flex;
+        font-size: 1.3rem;
+        margin-left: 3rem;
+        a{color: #939494}
+    }
+}
+#details-message {
+    width: 100%;
+    height: 57.5rem;
+    padding-top: 3.5rem;
+    padding-left: 2.8rem;
+    padding-right: 4.3rem;
+    display: flex;
+    justify-content: space-between;
+    #details-message-left {
+        width: 6rem;
+        height: 21rem;
+          ul{
+            li {
+                width: 5.8rem;
+                height: 5.8rem;
+                border: 1px solid #cdcdcd;
+                margin-bottom: 1.5rem;
+                img {
+                    width: 5.8rem;
+                    height: 5.8rem;
+                }
+            }
+        }
+    };
+    #details-message-center {
+        width: 30rem;
+        height: 30rem;
+        img{
+            width: 30rem;
+            height: 30rem;
+        }
+    };
+    #details-message-right {
+        width: 71rem;
+        height: 39.6rem;
+        
+        #title {
+            font-size: 2.4rem;
+            color: #000000;
+            margin-bottom: 1.5rem;
+        }
+        h4 {
+            font-size: 1.3rem;
+            color: #666666;
+            font-style: normal;
+            margin-bottom: 2.8rem;
+        }
+        #star {
+            font-size: 1.2rem;
+            margin-bottom: 4.6rem;
+            a{
+                color: #666666;
+            }
+        }
+        #desc {
+            font-size: 1.3rem;
+            color: #666666;
+            line-height: 2rem;
+            a {
+                color: #000000;
+                border-bottom: 1px solid #000000;
+            }
+        }
+        #colors {
+            width: 55.8rem;
+            height: 4.4rem;
+            margin-top: 2rem;
+            margin-bottom: 4.3rem;
+            display: flex;
+            span {
+                color: #666666;
+                font-size: 2rem;
+                margin-top: 0.5rem;
+            }
+            ul {
+                margin: 0 2rem;
+                width: 49.3rem;
+                height: 4.4rem;
+                display: flex;
+                justify-content: space-between;
+                li {
+                    width: 4.2rem;
+                    height: 4.2rem;
+                    background-color: aqua;
+                }
+            }
+        }
+        #colorSelect {
+            width: 35rem;
+            height: 4.3rem;
+            border: 1px solid #e1e1e1;
+            margin-bottom: 1.8rem;
+        }
+        #details-message-right-bottom{
+            display: flex;
+            text-align: center;
+            line-height: 4.2rem;
+            height: 4.2rem;
+            #count {
+                width: 20rem;
+                height: 4.2rem;
+                border: 1px solid #e1e1e1;
+            }
+            #price {
+                width: 24rem;
+                height: 4.2rem;
+                background-color: #363636;
+                color: #ffffff;
+                margin-left: 1.4rem;
+            }
+            #notice {
+                width: 24rem;
+                height: 4.2rem;
+                background-color: #000000;
+                color: #ffffff;
+            }
+        }
+    }
+}
+
+#recommend {
+    width: 90.9rem;
+    height: 57rem;
+    
+    margin-bottom: 3rem;
+    margin-left: 32rem;
+   
+    h3 {
+        color: #000000;
+        font-size: 2.4rem;
+        text-align: center;
+        margin-bottom: 4.5rem;
+    }
+    #recommend-wrap{
+        display: flex;
+        #recommend-left{
+            ul {
+                display: flex;
+                li {
+                    width: 32.5rem;
+                    height: 48rem;
+                    border-right: 1px solid #e5e5e5;
+                    display: flex;
+                   
+                    span{
+                        font-size: 2rem;
+                        margin-top: 10rem;
+                    }
+                    .li-center {
+                        margin: 0 1.5rem;
+                        width: 25rem;
+                        height: 46.3rem;
+                        text-align: center;
+                        img {
+                            display: block;
+                            width: 25rem;
+                            height: 25rem;
+                            margin-bottom: 3rem;
+                        }
+                        
+                        p{
+                            font-size: 1.3rem;
+                            color: #000000;
+                            margin-bottom: 2rem;
+                            
+                        }
+                        #stars {
+                            margin-top: 5rem;
+                        }
+                        #boxb {
+                            margin-left: 3.2rem;
+                            display: flex;
+                            div {
+                                width: 10rem;
+                                height: 3.5rem;
+                                line-height: 3.5rem;
+                                text-align: center;
+                                font-size: 1.4rem;
+                                color: #ffffff;
+                            }
+                            .box1 {
+                                background: #464646;
+                            }
+                            .box2 {
+                                background-color: #141414;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #recommend-right {
+            margin-left: 3rem;
+            margin-top: 18rem;
+            text-align: center;
+            p {
+                color: #000000;
+                font-size: 1.3rem;
+                line-height: 4rem;
+            }
+            a {
+                display: block;
+                width: 20.6rem;
+                height: 3.5rem;
+                background-color: #000000;
+                color: #e5e5e5;
+                font-size: 1.4rem;
+                text-align: center;
+                line-height: 3.5rem
+            }
+        }
+    }
+    
+}
