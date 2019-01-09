@@ -5,8 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>我的购物车</title>
+    <script type="text/javascript" src="/libs/requirejs/require.js" data-main="/js/cart"></script>
+    <link rel="stylesheet" href="../css/cart.css">
+    
 </head>
 <body>
+    <header>
+        <img src="../img/logo.png">
+    </header>
+    <!-- 模板渲染 -->
+   
+        <div id="cart-wrap">
+            <a href="/" id="continueShopping"> 继续购物</a>
+       
+            <h3>我的购物袋（<span id="number">2</span>个）</h3>
+            <table cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <th id="th1">
+                            <input type="checkbox" class="checkbox checkall">
+                        </th>
+                        <th id="th2">全选</th>
+                        <th id="th3">产品</th>
+                        <th id="th4">单价</th>
+                        <th id="th5">数量</th>
+                        <th id="th6">价格</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                </tbody>
+            </table>
     
+            <div id="totalPrice">
+                <h5>总价</h5>
+                <span class="totalprice">￥<span class="prices">0</span></span>
+                <a href="/" id="continueShopping"> 继续购物</a>
+                <div id="totalPriceBtn">立即结算</div>
+            </div>
+       
+        </div>
+  
+
+    <!-- tbody tr 模板 -->
+    <script type="text/html" id="cart-body-template">
+        {{each data prod}}
+        <tr>
+            <td>
+                <input type="checkbox" class="checkbox checked">
+                <span style="display:none" class="cart_id">{{prod.id}}</span>
+            </td>
+            <td>
+               
+                <img src={{prod.img}} alt="">
+            </td>
+            <td>
+                <p id="title">{{prod.title}}</p>
+                <div id="color-box">
+                    601新品
+                </div>
+                <div id="spans">
+                    <span id="modifie">修改</span>
+                    <span id="heart">+心愿单</span>
+                    <span id="delete" class="delete">删除</span>
+                </div>
+                
+            </td>
+            <td>￥{{prod.price}}</td>
+            <td>
+                <div id="selecBox">
+                    <span id="count">{{prod.count}}</span>
+                    <span id="arrows" class="arrows"></span>
+                    <div id="selecs">
+                        <ul >
+                            <li class="li">1</li>
+                            <li class="li">2</li>
+                            <li class="li">3</li>
+                            <li class="li">4</li>
+                            <li class="li">5</li>
+                        </ul>
+                    </div>
+                </div>
+            </td>
+            <td id="totalPrice">￥{{prod.count*prod.price}}</td>
+        </tr>
+        {{/each}}
+    </script>
+     
 </body>
 </html>

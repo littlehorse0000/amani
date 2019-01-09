@@ -1,0 +1,176 @@
+@import "./base.scss";
+$mainColor:#000000;
+$mainFontSize:14px;
+header {
+    width: 100%;
+    height: 56px;
+    border-bottom: 2px solid $mainColor;
+    text-align: center;
+    img {
+        width: 240px;
+        height: 50px;
+        
+    }
+}
+#cart-wrap {
+    padding: 30px;
+    #continueShopping {
+        display: inline-block;
+        color: $mainColor;
+        font-size: $mainFontSize;
+        border-bottom: 1px solid $mainColor;
+        margin-bottom: 30px;
+    }
+    h3 {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+    table {
+        font-size: $mainFontSize;
+        margin: 0 auto;
+        width: 1200px;
+        .checkbox {
+            position: absolute;
+            //left: -100px;
+            width: 20px;
+            height: 20px;
+            position: relative;
+        }
+        .checkbox:after {
+            position: absolute;
+            content: " ";
+            display: inline-block;
+            background-color: #ffffff;
+            border: 1px solid $mainColor;
+            visibility: visible;
+            width: 20px;
+            height: 20px;
+        }
+        .checkbox:checked:after {
+            content: "✓";
+            font-size: 18px;
+            text-align: center;
+            line-height: 20px;
+          }
+        thead {
+            background-color: #eeeeee;
+            text-align: left;
+            tr {
+                th {
+                    height: 66px;
+                    font-size: 18px;
+                    //padding-right: 200px;
+                    //border: 1px solid;
+                }
+                #th1 {
+                    width: 5%;
+                }
+                #th2 {
+                    width: 25%;
+                     padding-left: 5px;
+                }
+                #th3 {
+                    width: 30%;
+                }
+                #th4 {
+                    width: 10%;
+                }
+                #th5 {
+                    width: 15%;
+                }
+                #th6 {
+                    width: 13%
+                }
+            }
+            
+                  
+        }
+       
+        tbody {
+            tr {
+                height: 260px;
+                border-bottom: 1px solid ;
+                font-size: 16px;
+               td {
+                   img {
+                       width: 160px;
+                       height: 160px;
+                   }
+                   #title {
+                       margin-bottom: 15px;
+
+                   }
+                   #color-box{
+                    margin-bottom: 30px;
+                   }
+                   #spans {
+                      #modifie,#heart,#delete {
+                          border-bottom: 1px solid;
+                      }
+                   }
+                   #selecBox {
+                       width: 48px;
+                       height: 36px;
+                       border: 1px solid $mainColor;
+                       line-height: 36px;
+                       position: relative;
+                       #count {
+                          display: inline-block;
+                          text-align: center;
+                          width: 20px;
+                        }
+                       #arrows {
+                        display: inline-block;
+                        width: 0px;
+                        height: 0px;
+                        border-width: 9px;
+                        border-style: solid;
+                        border-color: $mainColor  transparent transparent  transparent ;
+                        position: absolute;
+                        top: 12px;
+                        right: 2px;
+                        }
+                        #selecs {
+                            position: absolute;
+                            width: 48px;
+                            height: 100px;
+                            border: 1px solid $mainColor;
+                            overflow-y: auto;
+                            text-align: center;
+                            display: none;
+                        }
+                   }
+               }
+            }
+        }
+        
+       
+    }
+    #totalPrice {
+        height: 100px;
+        width: 1200px;
+        margin:0 auto;
+        border-top:1px solid #e0e0e0;
+        border-bottom: 1px solid #e0e0e0;
+        position: relative;
+        h5 {
+            font-size: 18px;
+            display: inline-block;
+        }
+        span {float: right;font-size: $mainFontSize}
+        a {display: block;width: 60px;
+            margin-top: 50px}
+        #totalPriceBtn {
+            position: absolute;
+            right: 0;
+            top: 55px;
+            width: 174px;
+            height: 37px;
+            background-color: #a2221f;
+            color: #ffffff;
+            font-size: $mainFontSize;
+            text-align: center;
+            line-height: 37px;
+        }
+    }
+}

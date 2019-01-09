@@ -1,3 +1,4 @@
+@import "./base.scss";
 #deatils-nav {
     height: 5.2rem;
     width: 100%;
@@ -113,6 +114,28 @@
                 width: 20rem;
                 height: 4.2rem;
                 border: 1px solid #e1e1e1;
+                position: relative;
+                #arrows {
+                    display: inline-block;
+                    width: 0px;
+                    height: 0px;
+                    border-width: 9px;
+                    border-style: solid;
+                    border-color: #000000  transparent transparent  transparent ;
+                    position: absolute;
+                    top: 18px;
+                    right: 10px;
+                }
+            }
+            #detailSelects {
+                position: absolute;
+                width: 20rem;
+                height: 200px;
+                border: 1px solid #e1e1e1;
+                overflow-y: auto;
+                text-align: center;
+                top: 4.2rem;
+                display: none;
             }
             #price {
                 width: 24rem;

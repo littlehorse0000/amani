@@ -1,6 +1,14 @@
+@import "./base.scss";
+
+
 #carousel-example-generic{
-  margin-bottom: 10px;
+    margin-bottom: 10px;
     height: 52rem;
+    img {
+        width: 100%;
+        height: 100%;
+        background-size: contain;
+    }
     #before {
         left:-80px;
     }
@@ -24,6 +32,7 @@
             }
             
             .li-center {
+                position: relative;
                 margin: 0 1.5rem;
                 width: 25rem;
                 height: 46.3rem;
@@ -34,7 +43,7 @@
                     font-weight: normal;
                     margin-top: 0.5rem;
                 }
-                img {
+                #bigimg {
                     display: block;
                     width: 22rem;
                     height: 22rem;
@@ -48,16 +57,23 @@
                     
                 }
                 #allColors {
-                    display: flex;
+                   
                     width: 228px;
                     height: 26px;
-                    justify-content: space-around;
+                    overflow: hidden;
                     ol{
                         width: 30px;
-                        height: 26px;
-                        background-color: blueviolet;
+                        height: 13px;
+                        display: inline-block;
+                        img {
+                            width: 30px;
+                            height: 13px;
+                        }
                     }
+                    #firstOl { height: 26px;};
+                    
                 }
+               
                 #stars {
                     margin-top: 5rem;
                 }
@@ -92,10 +108,40 @@
         height: 738px;
         
         #video-left-top {
+            position: relative;
             width: 947px;
             height: 520px;
-            background-image: url("https://www.giorgioarmanibeauty.cn/dw/image/v2/AARM_PRD/on/demandware.static/-/Sites-armani-cn-Library/default/dw38364034/homepage/PF_POWER_SUIT_960X534_27.jpg?sw=960");
             margin-bottom: 80px;
+            .video-show {
+                width: 947px;
+                height: 520px;
+                background-image: url("https://www.giorgioarmanibeauty.cn/dw/image/v2/AARM_PRD/on/demandware.static/-/Sites-armani-cn-Library/default/dw38364034/homepage/PF_POWER_SUIT_960X534_27.jpg?sw=960");
+            }
+            #videoBtn {
+                width: 50px;
+                height: 50px;
+                background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FscXVlXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzAgMzAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMwIDMwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cGF0aCBmaWxsPSIjMDEwMjAyIiBkPSJNMTEuNSwxOS42di05LjJsOS40LDQuNkwxMS41LDE5LjZ6IE0xNSw1LjhjLTUuMiwwLTkuNCw0LjEtOS40LDkuMnM0LjIsOS4yLDkuNCw5LjJjNS4yLDAsOS40LTQuMSw5LjQtOS4yUzIwLjIsNS44LDE1LDUuOCIvPjwvc3ZnPg==);
+                position: absolute;
+                top: 48%;
+                left: 48%;
+            }
+            .video-hide {
+                text-align: center;
+                width: 947px;
+                height: 520px;
+                margin-bottom: 80px;
+                display: none;
+                background-color: #B01632;
+                padding-top: 230px;
+                h3 {
+                    font-size:20px;font-family:'微软雅黑';
+                    
+                }
+                h4 {
+                    font-size:18px;font-family:'微软雅黑';
+                }
+                display: none;
+            }
         }
         #video-left-bottom {
             text-align: center;
@@ -120,7 +166,7 @@
         height: 508px;
        
         margin-top: 80px;
-        margin-left: 30px;
+        margin-left: 200px;
         span {
 
             font-size: 14px;
@@ -156,26 +202,52 @@
         }
     }
 }
+#videoBox {
+    width: 600px;
+    height: 400px;
+    border: 1px solid #000000;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    z-index: 99999;
+    background-color: #ffffff;
+    display: none;
+    #X {float: right;font-size: 20px}
+    #videoBoxBottom {width: 600px;height: 380px;border: 1px solid;margin-top: 20px}
+}
+#opcatityBox {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 99998;
+    display: none;
+}
 #beautiful {
-   height: 800px;
+   //height: 800px;
   
    display: flex;
    #beautiful-left {
-       width: 950px;
-       height: 796px;
+       width: 1200px;
+       height: 1000px;
        background-image: url("https://www.giorgioarmanibeauty.cn/dw/image/v2/AARM_PRD/on/demandware.static/-/Sites-armani-cn-Library/default/dwdf858404/homepage/hp-mosaic-content-IRIS-CELADON-1.jpg?sw=1237");
        background-size: contain;
     }
     #beautiful-right {
         #beautiful-right-top {
-            width: 570px;
-            height:468px;
+            width: 824px;
+            height:676px;
             background-size: contain;
             background-image: url("https://www.giorgioarmanibeauty.cn/dw/image/v2/AARM_PRD/on/demandware.static/-/Sites-armani-cn-Library/default/dw11db2f71/homepage/PF_POWER_SUIT_960X534_2.jpg?sw=960");
         }
        #beautiful-right-bottom {
            padding-top: 160px;
-           width: 570px;
+           width: 824px;
            height: 320px;
            background-color: #ffffff;
            text-align:center;
@@ -200,7 +272,7 @@
     }
 }
 #last-banner {
-    height: 595px;
+    height: 791px;
     background-image: url('https://www.giorgioarmanibeauty.cn/dw/image/v2/AARM_PRD/on/demandware.static/-/Sites-armani-cn-Library/default/dw5aa3d79f/landing-pages/MaestroOfDetails/hp_ITA.jpg?sw=1920');
     background-size: contain;
 }

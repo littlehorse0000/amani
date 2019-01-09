@@ -5,11 +5,17 @@ require.config({
         "jquery":"libs/jquery/jquery-1.12.4.min",
         "header":"js/header",
         "footer":"js/footer",
-        "bootstrap":"libs/bootstrap/js/bootstrap.min"
+        "bootstrap":"libs/bootstrap/js/bootstrap.min",
+        "scroll":"js/scroll",
+        "cookie":"libs/jquery-plugins/jquery.cookie",
+        "template":"libs/art-template/template-web"
     },
     shim:{
         "bootstrap" : {
 			deps:["jquery"]
-		}
+        },
+        "cookie" : {
+            deps:["jquery"]
+        }
     }
 })

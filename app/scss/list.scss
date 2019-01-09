@@ -1,3 +1,4 @@
+@import "./base.scss";
 .allProducts {
     width: 100%;
     height: 7rem;
@@ -22,6 +23,7 @@
     padding: 0 2rem;
     #wrap-box {
         display: flex;
+        margin-bottom: 20px;
         #wrap-box-left {
             width: 30.5rem;
             height: 72.5rem;

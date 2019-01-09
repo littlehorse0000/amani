@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script type="text/javascript" src="/libs/requirejs/require.js" data-main="/js/login"></script>
-    <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/login.css">
     <title>欢迎登录</title>
 </head>
@@ -22,7 +20,7 @@
                             <dl>
                                     <dt>您的邮箱/手机 *</dt>
                                     <dd>
-                                        <input type="text" id="inputusername">
+                                        <input type="text" id="login-inputusername">
                                         <span></span>
                                     </dd>
                             </dl>
@@ -30,7 +28,7 @@
                             <dl>
                                     <dt>密码 *</dt>
                                     <dd>
-                                        <input type="password" id="inputPassword3">
+                                        <input type="password" id="login-inputPassword" >
                                         <span></span>
                                     </dd>
                             </dl>
@@ -79,6 +77,6 @@
     </div>
 
     <footer></footer>
-
+    <script type="text/javascript" src="/libs/requirejs/require.js" data-main="/js/login"></script>
 </body>
 </html>
