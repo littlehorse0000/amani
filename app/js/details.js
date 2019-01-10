@@ -4,6 +4,7 @@ require(["config"],function(){
       function Detail(){
           this.data();
           this.addListener();
+         
       };
 
       Detail.prototype = {
@@ -49,12 +50,10 @@ require(["config"],function(){
                   </ul>
                 </div>
                 <div id="details-message-center">
-                  <img
-                    src="${data[i].img}"
-                    alt=""
-                  />
+                    <img src="${data[i].img}">  
+                     
                 </div>
-                <div id="details-message-right">
+                <div id="details-message-right" >
                   <div id="title">${data[i].title}</div>
                   <h4>LIP MACNET</h4>
                   <div id="star"><span></span> <a href="">共150条评论</a></div>
@@ -106,6 +105,7 @@ require(["config"],function(){
                   $("#details-message").html(str)
               }
           }
+         
         },
 
         //事件监听
@@ -117,12 +117,13 @@ require(["config"],function(){
 
         //加入购物车
         addcart : function(event){
-          let products = $.cookie("message")? JSON.parse($.cookie("message")):[];
+      
+          let products = $.cookie("message")?JSON.parse($.cookie("message")):[];
          
           var target = event.target;
           if(target.className === "addcart"){
             var product = {};
-               
+              
             var detailsMessage = target.parentNode.parentNode.parentNode,
                 img = detailsMessage.children[1].children[0],
                 title = detailsMessage.children[2].children[0],
@@ -152,13 +153,25 @@ require(["config"],function(){
             $.cookie.raw = true;
             products = JSON.stringify(products);
            
-            console.log(products)
-            $.cookie("message",products,{expires:10});
+            
+            $.cookie("message",products,{expires:10,path:"/"});
            
             
            
+           this.showNumber();
+         
           }
-        }
+        },
+
+        //购物袋显示数量
+        showNumber : function(){
+           let products = JSON.parse($.cookie("message"))
+           $(".headercount").show();
+          $(".headercountspan").html(products.length)
+            
+        },
+
+        
 
       };
 

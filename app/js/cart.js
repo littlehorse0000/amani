@@ -12,9 +12,15 @@ require(["config"],function(){
             //获取cookie里面的数据,并处理
             getCookie:function(){
                 $.cookie.json = true;
-                var data = this.products = $.cookie("message");
+                var data = this.products = $.cookie("message")||[];
+               
                 var html = template("cart-body-template",{data:data});
                 $("tbody").html(html);
+                //cookie为空时
+                if(data.length === 0){
+                    $('#cart-wrap').toggle();
+                    $(".continueShop").toggle();
+                }
             },
             //事件监听
             addListener:function(){
@@ -25,7 +31,7 @@ require(["config"],function(){
                 //删除
                 $("tbody").on("click",$.proxy(this.delete,this))
                 //复选框
-                $(":checkbox").on("change",$.proxy(this.ischecked,this))
+                $(".checked").on("change",$.proxy(this.ischecked,this))
                 //全选
                 $(".checkall").on("change",$.proxy(this.checkall,this))
             },
@@ -49,8 +55,10 @@ require(["config"],function(){
                   var id = $(target).parents("tr").find(".cart_id").html();
                   var currProduct = this.products.filter(prod => prod.id == id);
                   currProduct[0].count = target.innerHTML    
-                  $.cookie("message",this.products)
+                  $.cookie("message",this.products,{expires:10,path:"/"})
+                  this.trPrice(target);
                 }
+               
             },
             
             //删除
@@ -58,24 +66,33 @@ require(["config"],function(){
                 var target = event.target;
                 if(target.className === "delete"){
                     var id = $(target).parents("tr").find(".cart_id").html();
+                    var tr = $(target).parents("tr");
+                    tr.remove();
                     this.products = this.products.filter(prod => prod.id !== id);
-                    $.cookie("message",this.products)
+                    $.cookie("message",this.products,{expires:10,path:"/"})
                 }
+                
+                
             },
 
             //全选
-            checkall : function(){
-                $(".checked").prop("checked","checked:checked");
-                this.totalPrice();
+            checkall : function(event){
+                var target = event.target
+                 if(target.checked){
+                    $(".checked").prop("checked",true);
+                }else{
+                    $(".checked").prop("checked",false);
+                }
+               this.totalPrice();
             },
 
             //复选框部分选中
             ischecked : function(event){
                var length =  $(".checked:checked").length;
                if(length == this.products.length){
-                  $(".checkall").prop("checked","checked:checked")
+                  $(".checkall").prop("checked",true)
                }else{
-                  $(".checkall").removeAttr("checked")
+                $(".checkall").prop("checked",false)
                }    
                this.totalPrice();
             },
@@ -87,11 +104,23 @@ require(["config"],function(){
                    sum +=Number(($(element).parents("tr").find("#totalPrice").html()).substr(1));
                 })
                 $(".prices").html(sum)
+
+               
+            },
+
+            //当行价格
+            trPrice : function(target){
+                var trPrice = $(target).parents("tr").find("#totalPrice").html();
+                var aprice =Number($(target).parents("tr").find(".aprice").html().substr(1));
+                trPrice = Number(target.innerHTML)*aprice;
+                $(target).parents("tr").find("#totalPrice").html("￥"+trPrice)
+               
             },
 
             //改变数量
             changnumber: function(){
-                $("#number").html(this.products.length)
+                $("#number").html(this.products.length);
+               
             }
            
         };

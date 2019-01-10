@@ -13,8 +13,12 @@
     <header>
         <img src="../img/logo.png">
     </header>
-    <!-- 模板渲染 -->
-   
+        <div class="continueShop" style="display:none">
+            <h3>我的购物袋</h3>
+            <p>您的购物袋是空的，立即购买您最喜爱的产品</p>
+            <a href="/" id="continueShopping"> 继续购物</a>
+        </div>
+
         <div id="cart-wrap">
             <a href="/" id="continueShopping"> 继续购物</a>
        
@@ -71,7 +75,7 @@
                 </div>
                 
             </td>
-            <td>￥{{prod.price}}</td>
+            <td class="aprice">￥{{prod.price}}</td>
             <td>
                 <div id="selecBox">
                     <span id="count">{{prod.count}}</span>

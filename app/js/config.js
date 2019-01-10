@@ -8,13 +8,17 @@ require.config({
         "bootstrap":"libs/bootstrap/js/bootstrap.min",
         "scroll":"js/scroll",
         "cookie":"libs/jquery-plugins/jquery.cookie",
-        "template":"libs/art-template/template-web"
+        "template":"libs/art-template/template-web",
+        "zoom":"libs/jquery-plugins/jquery.jqzoom-core"
     },
     shim:{
         "bootstrap" : {
 			deps:["jquery"]
         },
         "cookie" : {
+            deps:["jquery"]
+        },
+        "zoom": {
             deps:["jquery"]
         }
     }

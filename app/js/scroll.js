@@ -4,21 +4,20 @@ define(["jquery"],function($){
             var top = $(document).scrollTop();
            
              if(top>200){
-                    $("#scrollBox-top").show();
+                    $("#scrollBox-top").fadeIn("normal");
                     }else{
-                    $("#scrollBox-top").hide();
+                    $("#scrollBox-top").fadeOut("normal");
                 }
 
             if(top>300){
-                $("#scrollBox-bottom").show(function(){
-                   
-                });
+                $("#scrollBox-bottom").fadeIn("normal");
                     }else{
-                $("#scrollBox-bottom").hide();
+                $("#scrollBox-bottom").fadeOut("normal");
             }
 
             $("#scrollBox-bottom").on("click",function(){
-                $(document).scrollTop(0)
+                $(document).animate({scrollTop:0},"slow")
+                //$(document).scrollTop(0)
             })
         })
     })
