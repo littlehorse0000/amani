@@ -13,12 +13,14 @@ define(["jquery"],function($){
                 $("#scrollBox-bottom").fadeIn("normal");
                     }else{
                 $("#scrollBox-bottom").fadeOut("normal");
-            }
-
-            $("#scrollBox-bottom").on("click",function(){
-                $(document).animate({scrollTop:0},"slow")
-                //$(document).scrollTop(0)
-            })
+            }   
         })
+
+
+        $("#scrollBox-bottom").on("click",function(){
+            $("html,body").animate({scrollTop:"0px"},"slow")
+            
+        })
+       
     })
 })

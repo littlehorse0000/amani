@@ -9,7 +9,7 @@ require.config({
         "scroll":"js/scroll",
         "cookie":"libs/jquery-plugins/jquery.cookie",
         "template":"libs/art-template/template-web",
-        "zoom":"libs/jquery-plugins/jquery.jqzoom-core"
+        "zoom":"libs/jquery-plugins/jquery.elevatezoom"
     },
     shim:{
         "bootstrap" : {

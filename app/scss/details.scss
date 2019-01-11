@@ -43,7 +43,7 @@
         
         img{
             width: 30rem;
-            height: 30rem;
+           
         }
     };
     #details-message-right {
@@ -179,22 +179,99 @@
                     height: 48rem;
                     border-right: 1px solid #e5e5e5;
                     display: flex;
-                   
-                    span{
-                        font-size: 2rem;
-                        margin-top: 10rem;
+                   .detailsBefore {
+                    display: inline-block;
+                    border: 20px solid transparent;
+                    border-left: 20px solid #fff;
+                    width: 0;
+                    height: 0;
+                    content: ' '
+                   }
+                   .left {
+                        width: 20px;
+                        height: 20px;
+                        top: 20%;
+                        position: relative;
+                        .left-arrow1,.left-arrow2 {
+                            width: 0;
+                            height: 0;
+                            display: block;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            border-top: 10px transparent dashed;
+                            border-left: 10px transparent dashed;
+                            border-bottom: 10px transparent dashed;
+                            border-right: 10px white solid;
+                            overflow: hidden;
+                        }
+                
+                        .left-arrow1 {
+                            border-right: 10px #000000 solid;
+                        }
+                
+                        .left-arrow2 {
+                            left: 1px;
+                            border-right: 10px white solid;
+                        }
+                   }
+                   .right {
+                    width: 20px;
+                    height: 20px;
+                    top: 20%;
+                    position: relative;
+                    .left-arrow1,.left-arrow2 {
+                        width: 0;
+                        height: 0;
+                        display: block;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        border-top: 10px transparent dashed;
+                        border-right: 10px transparent dashed;
+                        border-bottom: 10px transparent dashed;
+                        border-left: 10px white solid;
+                        overflow: hidden;
                     }
+            
+                    .left-arrow1 {
+                        left: 1px;
+                        border-left: 10px #000000 solid;
+                    }
+            
+                    .left-arrow2 {
+                        border-left: 10px white solid;
+                    }
+               }
                     .li-center {
                         margin: 0 1.5rem;
                         width: 25rem;
                         height: 46.3rem;
                         text-align: center;
-                        img {
-                            display: block;
+                        #changeImg {
                             width: 25rem;
                             height: 25rem;
+                            overflow: hidden;
                             margin-bottom: 3rem;
+                            position: relative;
+                            #changeImgDiv{
+                                position: absolute;
+                                left: 0;
+                                display: flex;
+                                li {
+                                    width: 25rem;
+                                    height: 25rem;
+                                    img {
+                                        width: 25rem;
+                                        height: 25rem;
+                                       
+                                    }
+                                }
+                               
+                            }
+                          
                         }
+                       
                         
                         p{
                             font-size: 1.3rem;

@@ -181,6 +181,7 @@ define(["jquery","cookie"], function($) {
           });
           $("#inputDiv").html(html);
           //this.inputDiv();
+          
         });
       },
 

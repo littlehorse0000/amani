@@ -1,10 +1,10 @@
 //引入模块
 require(["config"],function(){
-    require(["jquery","header","footer","scroll","cookie"],function($){
+    require(["jquery","header","footer","scroll","cookie","zoom"],function($){
       function Detail(){
           this.data();
           this.addListener();
-         
+          this.index=0;
       };
 
       Detail.prototype = {
@@ -50,7 +50,7 @@ require(["config"],function(){
                   </ul>
                 </div>
                 <div id="details-message-center">
-                    <img src="${data[i].img}">  
+                    <img src="${data[i].bigimg}" data-zoom-image=${data[i].bigimg}" id="zoom_05">  
                      
                 </div>
                 <div id="details-message-right" >
@@ -105,13 +105,15 @@ require(["config"],function(){
                   $("#details-message").html(str)
               }
           }
-         
+          this.zoom();
         },
 
         //事件监听
         addListener : function(){
           //加入购物车
           $("#details-message").on("click",$.proxy(this.addcart,this))
+          //左右点击
+          $(".details_li").on("click",$.proxy(this.change,this))
           
         },
 
@@ -171,7 +173,25 @@ require(["config"],function(){
             
         },
 
-        
+        //放大镜
+        zoom:function(){
+          $("#zoom_05").elevateZoom({
+              zoomType: "inner",
+              cursor: "crosshair"
+          });
+        },  
+         
+        //点击左右切换
+        change : function(){
+          this.index++;
+          if(this.index>3)this.index=0;
+          var Wid = -($("#changeImgDiv>li").width());
+          // console.log(Wid)
+          // console.log(this.index)
+          var Left = Wid*this.index;
+          // console.log(Left)
+          $("#changeImgDiv").css({left:Left});
+        }
 
       };
 
